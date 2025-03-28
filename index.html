@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARINEDOCS | Оформление морских документов | @marinedocs</title>
+    
+    <!-- Подтверждение прав для поисковых систем -->
+    <meta name="google-site-verification" content="y-7_1SKuWYKk-1LzpLRN1UAdNIGqWhzViepicTObtyk" />
+    <meta name="yandex-verification" content="a263c9a9d41da86d" />
+   
+    <!-- SEO -->
+    <meta name="description" content="Профессиональное оформление морских документов. Дипломы, сертификаты НБЖС/ОСПС, трудоустройство за 20 дней">
+    <meta name="keywords" content="морские документы, дипломы для моряков, сертификаты НБЖС, ОСПС">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Стили -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --deep-blue: #005f73;
+            --ocean-wave: #0a9396;
+            --sea-foam: #94d2bd;
+            --sun-gold: #ee9b00;
+            --light-wave: #e9f5f9;
+            --dark-blue: #001219;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--light-wave);
+            color: var(--dark-blue);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Анимированные волны */
+        .wave-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .wave-bg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".1" fill="%23005f73"/></svg>');
+            background-size: 50% 100%;
+            animation: wave 20s linear infinite;
+        }
+        
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--deep-blue), var(--ocean-wave));
+            color: white;
+            padding: 60px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23e9f5f9"/></svg>');
+            background-size: cover;
+            z-index: 1;
+        }
+        
+        .logo-container {
+            display: inline-block;
+            position: relative;
+        }
+        
+        .logo {
+            width: 250px;
+            margin-bottom: 25px;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin: 15px 0;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            letter-spacing: 1px;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .service-card-img-container {
+            width: 100%;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .service-card-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-card-img:hover {
+            transform: scale(1.03);
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            padding: 35px;
+            margin: 40px 0;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 95, 115, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                width: 200px;
+            }
+            .service-card-img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Анимированный фон -->
+    <div class="wave-container">
+        <div class="wave-bg"></div>
+    </div>
+    
+    <header class="animate__animated animate__fadeIn">
+        <div class="container">
+            <div class="logo-container">
+                <img src="logo.png" alt="MARINEDOCS" class="logo">
+            </div>
+            <h1 class="animate__animated animate__fadeInDown">MARINEDOCS</h1>
+            <p class="subtitle animate__animated animate__fadeInUp">Профессиональное оформление морских документов</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="service-card scroll-animate">
+            <div class="service-card-img-container">
+                <img src="document.jpg" alt="Оформление документов" class="service-card-img" loading="lazy">
+            </div>
+            <h2>Оформление морских документов для работы</h2>
+            <ul>
+                <li>Профессиональные дипломы и сертификаты</li>
+                <li>Обязательные курсы: НБЖС, ОСПС, Шлюпки и Плоты</li>
+                <li>Консультации по получению, обмену и восстановлению</li>
+            </ul>
+            <p>Актуальные требования и вакансии в море — подробнее здесь:<br>
+            <a href="https://t.me/marinedocs" class="telegram-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram"></i>@marinedocs</a></p>
+        </div>
+        
+        <div class="service-card scroll-animate animate-delay-1">
+            <div class="service-card-img-container">
+                <img src="support.jpg" alt="Поддержка моряков" class="service-card-img" loading="lazy">
+            </div>
+            <h2>Профессиональная поддержка моряков</h2>
+            <p><strong>✅ Помощь с документами:</strong></p>
+            <ul>
+                <li>Оформление, замена и получение морских дипломов и сертификатов</li>
+                <li><strong>Пример:</strong> полный пакет документов матроса 2-го класса (обработка) — подготовим быстро и без ошибок</li>
+            </ul>
+            
+            <p><strong>✅ Срочное трудоустройство:</strong></p>
+            <ul>
+                <li>Отправляем в рейс уже через 20 дней</li>
+                <li><strong>Зарплата:</strong> от 170 000 руб. (в зависимости от судна и рейса)</li>
+            </ul>
+        </div>
+        
+        <div class="service-card scroll-animate animate-delay-2">
+            <div class="service-card-img-container">
+                <img src="benefits.jpg" alt="Наши преимущества" class="service-card-img" loading="lazy">
+            </div>
+            <h2>С нашей помощью вы получите:</h2>
+            <ul>
+                <li><strong>Детальную консультацию</strong> по оформлению именно ваших документов</li>
+                <li><strong>Четкий план действий</strong>: какие документы готовить, сроки и стоимость</li>
+                <li><strong>Поддержку на всех этапах</strong> — от подачи заявки до получения на руки</li>
+            </ul>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://t.me/marinedocs" class="contact-btn" target="_blank" rel="noopener noreferrer">Написать в Telegram <i class="fab fa-telegram"></i></a>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="animate__animated animate__fadeIn">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://t.me/marinedocs" target="_blank" title="Telegram" rel="noopener noreferrer"><i class="fab fa-telegram"></i></a>
+                <a href="viber://chat?number=+123456789" target="_blank" title="Viber" rel="noopener noreferrer"><i class="fab fa-viber"></i></a>
+                <a href="https://wa.me/123456789" target="_blank" title="WhatsApp" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>© 2023 MARINEDOCS. Все права защищены.</p>
+            <p>Контакты: <a href="https://t.me/marinedocs" class="telegram-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram"></i>@marinedocs</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Анимация при скролле
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollAnimateElements = document.querySelectorAll('.scroll-animate');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            scrollAnimateElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

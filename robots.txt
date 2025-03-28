@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://marinesea-ru.vercel.app/sitemap.xml
